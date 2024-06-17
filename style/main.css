@@ -1,0 +1,247 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(14, 0, 27);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul img {
+    height: 9vw;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-align: center;
+    padding: 1.5vw 2vw;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+h2 {
+    color: white;
+    margin-top: 50px;
+}
+
+p {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.carousel-container {
+    position: relative;
+    margin: 50px auto;
+    justify-content: center;
+    align-items: center;
+    height: 50vw;
+    overflow: hidden;
+    max-width: 800px;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -5px;
+}
+
+.carousel-item img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+form {
+    color: white;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.field {
+    margin-bottom: 15px;
+    margin-left: -15px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+.game-container {
+    display: none;
+    width: 80%;
+    height: 90vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.game_infos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 5 / 4;
+    border: solid black;
+    cursor: crosshair;
+    position: relative;
+    background-color: rgb(0, 2, 38);
+    box-shadow: 0 0 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#target {
+    height: 30%;
+    width: 30%;
+    position: absolute;
+    transition: 0.25s;
+    animation: rotateTarget 4s linear infinite, moveTarget 2s ease-in-out infinite;
+}
+
+button {
+    height: 40px;
+    width: 100%;
+    max-width: 150px;
+    background-color: rgb(162, 167, 194);
+    border-radius: 20px;
+    border: black solid;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.score,
+.time,
+.best_score {
+    color: white;
+}
+
+@keyframes moveTarget {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul img {
+        height: 30vw;
+        margin-bottom: 20px;
+    }
+
+    .carousel-container {
+        width: 100vw;
+        height: 58vw;
+    }
+}
+
+.close_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}

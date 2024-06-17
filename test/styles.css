@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    background-image: url('chemin/vers/image-de-fond-galaxie.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header, section {
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #ffcc00;
+}
+
+img {
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#contact-form input, #contact-form textarea, #contact-form button {
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    background-color: #ffcc00;
+    color: #000;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: #ffaa00;
+}
+
+a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

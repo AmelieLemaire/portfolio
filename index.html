@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Portfolio</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style/main.css'>
+    <script src='script/carousel.js'></script>
+    <script src="work/shotnwin/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <img src="assets/Photo-pro.png" alt="Photo de profil">
+                <li><a href="#formation">Formation</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#bénévolat">Bénévolat</a></li>
+                <li><a href="#form">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <p>Étudiante en développement web chez Epitech, passionnée par l'apprentissage et l'innovation technologique. À
+            22 ans, je m'investis pleinement dans l'acquisition de compétences en programmation et en conception de
+            sites web.
+
+            En dehors de mes études, j'ai un intérêt marqué pour les arts manuels, notamment le crochet et le tricot,
+            qui me permettent de stimuler ma créativité et de trouver l'équilibre entre technologie et artisanat. La
+            lecture est également une passion qui nourrit ma curiosité intellectuelle et m'inspire au quotidien.
+
+            À la recherche d'opportunités d'apprentissage et de collaboration dans le domaine du développement web, je
+            suis enthousiaste à l'idée d'explorer de nouvelles perspectives et de contribuer à des projets innovants.
+        </p>
+        <button><a href="assets/Amélie_lemaire-3.pdf" download="Amélie_Lemaire_CV.pdf">Mon CV</a></button>
+        <h2>Formations</h2>
+        <div id="formation"></div>
+
+        <button id="showGameBtn">shotnwin</button>
+        <div id="projets">
+            <div id="gameContainer" class="game-container" style="display: none;">
+                <button id="closeGameBtn" class="close_btn">&times;</button>
+                <div class="game">
+                    <button class="start_btn">Start/restart</button>
+                    <div class="game_infos">
+                        <span class="score">Score : 0</span>
+                        <span class="time">Temps : 0</span>
+                        <span class="best_score">Meilleur Score : 0</span>
+                    </div>
+                    <div class="container"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <form id="form">
+            <div class="field">
+                <label for="from_name">Nom</label>
+                <input type="text" name="from_name" id="from_name" required>
+            </div>
+            <div class="field">
+                <label for="to_name">Destinataire</label>
+                <input type="text" name="to_name" id="to_name" value="Amélie Lemaire" readonly>
+            </div>
+            <div class="field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" required></textarea>
+            </div>
+            <div class="field">
+                <label for="reply_to">Votre Email</label>
+                <input type="email" name="reply_to" id="reply_to" required>
+            </div>
+            <input type="submit" id="button" value="Send Email">
+        </form>
+
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script>
+            emailjs.init('rzelr4nof7W8AbOyy');
+        </script>
+        <script src="script/main.js"></script>
+    </footer>
+</body>
+
+</html>
