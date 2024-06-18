@@ -1,0 +1,60 @@
+function display_event(array $event)
+{
+    echo 'The "' . $event['name'] . ' "event will take place on ' .
+        substr($event['date'], 6, 8) . '-' . substr($event['date'], 4, -2) . '-' . substr($event['date'], 0, 4) .
+        ' in ' . $event['location'] . PHP_EOL;
+}
+
+//Step 2
+
+function display_events_by_month(array $events)
+{
+    $dates = array();
+
+    for ($i = 0; $i < count($events); $i++) {
+        $event = $events[$i];
+
+        $date = substr($event['date'], 0, 4) . '-' . substr($event['date'], 4, -2) . '-' . substr($event['date'], 6, 8);
+        array_push($dates, $date);
+        asort($dates);
+    }
+
+    $monthAndYear = array();
+
+    for ($i = 0; $i < count($events); $i++) {
+        $event = $events[$i];
+        if (!in_array(substr($event['date'], 0, 4) . '-' . substr($event['date'], 4, -2), $dates, true)) {
+            array_push($monthAndYear, substr($event['date'], 0, 4) . '-' . substr($event['date'], 4, -2));
+        }
+        asort($monthAndYear);
+    }
+
+    $datesOrderKey = array_keys($dates);
+    $Keys = array_keys($monthAndYear);
+    $i = 0;
+
+    foreach ($datesOrderKey as $ADate) {
+        $event = $events[$ADate];
+
+        if(!in_array(substr($event['date'], 0, 4) . '-' . substr($event['date'], 4, -2), $dates)){
+            echo $monthAndYear[$Keys[$i]] . PHP_EOL;
+        }
+        $i++;
+
+        echo '  The "' . $event['name'] . ' "event will take place on ' .
+            substr($event['date'], 6, 8) . '-' . substr($event['date'], 4, -2) . '-' . substr($event['date'], 0, 4) .
+            ' in ' . $event['location'] . PHP_EOL;
+    }
+}
+
+//step 3
+
+function display_events_between_months(array $events, string $dateBegin ,string $dateEnd){
+
+}
+
+//step 4
+
+function display_calendar(array $events, string $dateBegin, string $dateEnd){
+    
+}

@@ -9,6 +9,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='style/main.css'>
     <script src='script/carousel.js'></script>
     <script src="work/shotnwin/script.js"></script>
+    <script src="script/mini.js"></script>
 </head>
 
 <body>
@@ -16,10 +17,12 @@
         <nav>
             <ul>
                 <img src="assets/Photo-pro.png" alt="Photo de profil">
-                <li><a href="#formation">Formation</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#bénévolat">Bénévolat</a></li>
-                <li><a href="#form">Contact</a></li>
+                <div id="li_nav">
+                    <li><a href="#formation">Formation</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#bénévolat">Bénévolat</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </div>
             </ul>
         </nav>
     </header>
@@ -36,12 +39,24 @@
             À la recherche d'opportunités d'apprentissage et de collaboration dans le domaine du développement web, je
             suis enthousiaste à l'idée d'explorer de nouvelles perspectives et de contribuer à des projets innovants.
         </p>
-        <button><a href="assets/Amélie_lemaire-3.pdf" download="Amélie_Lemaire_CV.pdf">Mon CV</a></button>
         <h2>Formations</h2>
         <div id="formation"></div>
 
-        <button id="showGameBtn">shotnwin</button>
         <div id="projets">
+            <button id="showGameBtn">shotnwin</button>
+            <button id="showMiniProjetsBtn">Voir les mini projets</button>
+            <div id="miniProjetsContainer" class="project-container" style="display: none;">
+                <button id="closeMiniProjetsBtn" class="close_btn">&times;</button>
+                <div id="project_zone">
+                    <p>Les mini projets sont des projets développé le temps d'un après midi, ils sont fonctionnels dans
+                        des terminaux</p>
+                    <div class="mini-projets"></div>
+                </div>
+            </div>
+            <div id="filePreviewContainer" class="preview-container" style="display: none;">
+                <button id="closeFilePreviewBtn" class="close_btn">&times;</button>
+                <div class="file-preview"></div>
+            </div>
             <div id="gameContainer" class="game-container" style="display: none;">
                 <button id="closeGameBtn" class="close_btn">&times;</button>
                 <div class="game">
@@ -58,26 +73,34 @@
 
     </main>
     <footer>
-        <form id="form">
-            <div class="field">
-                <label for="from_name">Nom</label>
-                <input type="text" name="from_name" id="from_name" required>
+        <div id="contact">
+            <div id="linkedin">
+                <a href="https://www.linkedin.com/in/amelie-lemaire-ba1170212" target="_blank">
+                    <img src="assets/logo_linedin.png" alt="">
+                    <img src="assets/linkedin.png" alt="www.linkedin.com/in/amelie-lemaire-ba1170212">
+                </a>
             </div>
-            <div class="field">
-                <label for="to_name">Destinataire</label>
-                <input type="text" name="to_name" id="to_name" value="Amélie Lemaire" readonly>
-            </div>
-            <div class="field">
-                <label for="message">Message</label>
-                <textarea name="message" id="message" required></textarea>
-            </div>
-            <div class="field">
-                <label for="reply_to">Votre Email</label>
-                <input type="email" name="reply_to" id="reply_to" required>
-            </div>
-            <input type="submit" id="button" value="Send Email">
-        </form>
-
+            <button><a href="assets/Amélie_lemaire-3.pdf" download="Amélie_Lemaire_CV.pdf">Mon CV</a></button>
+            <form id="form">
+                <div class="field">
+                    <label for="from_name">Nom</label>
+                    <input type="text" name="from_name" id="from_name" required>
+                </div>
+                <div class="field">
+                    <label for="to_name">Destinataire</label>
+                    <input type="text" name="to_name" id="to_name" value="Amélie Lemaire" readonly>
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" required></textarea>
+                </div>
+                <div class="field">
+                    <label for="reply_to">Votre Email</label>
+                    <input type="email" name="reply_to" id="reply_to" required>
+                </div>
+                <input type="submit" id="button" value="Send Email">
+            </form>
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script>
             emailjs.init('rzelr4nof7W8AbOyy');
