@@ -6,9 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeFilePreviewBtn = document.getElementById('closeFilePreviewBtn');
     const filePreviewDiv = document.querySelector('.file-preview');
 
+    if (!showMiniProjetsBtn || !miniProjetsContainer || !closeMiniProjetsBtn || !filePreviewContainer || !closeFilePreviewBtn || !filePreviewDiv) {
+        console.error('Un ou plusieurs éléments DOM requis sont manquants.');
+        return;
+    }
+
     showMiniProjetsBtn.addEventListener('click', () => {
-        fetchMiniProjets();
-        miniProjetsContainer.style.display = 'flex';
+        try {
+            fetchMiniProjets();
+            miniProjetsContainer.style.display = 'flex';
+        } catch (error) {
+            console.error('Erreur lors de la tentative d\'affichage des mini projets :', error);
+        }
     });
 
     closeMiniProjetsBtn.addEventListener('click', () => {
@@ -21,12 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function fetchMiniProjets() {
         const miniProjets = [
-            '../work/les_mini_projets/cinema.txt',
-            '../work/les_mini_projets/calendar.txt',
-            '../work/les_mini_projets/battleship.txt'
+            'work/les_mini_projets/cinema.txt',
+            'work/les_mini_projets/calendar.txt',
+            'work/les_mini_projets/battleship.txt'
         ];
 
         const miniProjetsDiv = miniProjetsContainer.querySelector('.mini-projets');
+        if (!miniProjetsDiv) {
+            console.error('L\'élément .mini-projets est manquant.');
+            return;
+        }
         miniProjetsDiv.innerHTML = '';
 
         miniProjets.forEach(file => {
@@ -35,7 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
             fileDiv.classList.add('file');
             fileDiv.textContent = fileName;
             fileDiv.addEventListener('click', () => {
-                previewFile(file);
+                try {
+                    previewFile(file);
+                } catch (error) {
+                    console.error(`Erreur lors de la tentative de prévisualisation du fichier ${fileName} :`, error);
+                }
             });
             miniProjetsDiv.appendChild(fileDiv);
         });
@@ -45,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(file)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error(`Erreur réseau: ${response.statusText}`);
                 }
                 return response.text();
             })
@@ -54,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 filePreviewContainer.style.display = 'flex';
             })
             .catch(error => {
+                console.error(`Erreur lors du chargement du fichier ${file} :`, error);
                 filePreviewDiv.innerHTML = `<p>Erreur lors du chargement du fichier: ${error.message}</p>`;
                 filePreviewContainer.style.display = 'flex';
             });
