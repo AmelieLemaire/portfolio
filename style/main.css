@@ -314,28 +314,21 @@ button {
     color: black;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(14, 0, 27);
-    color: white;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
 .carousel-logo {
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
     max-width: 800px;
-    margin: 20px auto;
+    margin: 0 auto;
     overflow: hidden;
     background-color: #333;
     padding: 20px 0;
     border-radius: 20px;
 }
 
-.carousel-prev, .carousel-next {
+.carousel-prev,
+.carousel-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -346,7 +339,7 @@ body {
     padding: 10px;
     font-size: 24px;
     transition: background-color 0.3s;
-    z-index: 1000;
+    width: 40px;
 }
 
 .carousel-prev {
@@ -357,29 +350,35 @@ body {
     right: 10px;
 }
 
-.carousel-prev:hover, .carousel-next:hover {
+.carousel-prev:hover,
+.carousel-next:hover {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
 .logo-carousel-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    height: 100px;
-    width: calc(100px * 5 + 20px); /* Image width * number of images + total margin */
 }
 
 .logo-carousel-slide {
     display: flex;
-    transition: transform 0.5s ease;
 }
 
 .logo-carousel-img {
     max-width: 100px;
     height: auto;
-    margin: 0 10px;
+    margin: 0 auto; /* Centrez horizontalement l'image */
+    opacity: 0; /* Initialiser l'opacité à 0 pour toutes les images */
+    transition: opacity 0.3s ease; /* Transition pour l'opacité */
 }
 
-
+.logo-carousel-img.active {
+    opacity: 1; /* Opacité à 1 pour l'image active */
+}
 
 .score,
 .time,

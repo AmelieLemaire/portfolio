@@ -1,27 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const carouselSlide = document.querySelector('.logo-carousel-slide');
     const carouselImages = document.querySelectorAll('.logo-carousel-img');
-
-    // Buttons
     const prevBtn = document.querySelector('.carousel-prev');
     const nextBtn = document.querySelector('.carousel-next');
-
-    // Counter
     let counter = 0;
-    const size = carouselImages[0].clientWidth + 20; // Adding margin to the width
 
-    // Event listeners
+    // Affiche la première image
+    carouselImages[counter].classList.add('active');
+
+    // Event listener pour le bouton suivant
     nextBtn.addEventListener('click', () => {
-        if (counter >= carouselImages.length - 4) return; // Adjusted to 1 because we have 2 images
-        carouselSlide.style.transition = 'transform 0.5s ease-in-out';
-        counter++;
-        carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+        carouselImages[counter].classList.remove('active'); // Masque l'image actuelle
+        counter = (counter + 1) % carouselImages.length; // Incrémente le compteur
+        carouselImages[counter].classList.add('active'); // Affiche la nouvelle image
     });
 
+    // Event listener pour le bouton précédent
     prevBtn.addEventListener('click', () => {
-        if (counter <= 0) return;
-        carouselSlide.style.transition = 'transform 0.5s ease-in-out';
-        counter--;
-        carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+        carouselImages[counter].classList.remove('active'); // Masque l'image actuelle
+        counter = (counter - 1 + carouselImages.length) % carouselImages.length; // Décrémente le compteur
+        carouselImages[counter].classList.add('active'); // Affiche la nouvelle image
     });
 });
