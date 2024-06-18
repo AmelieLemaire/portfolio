@@ -352,3 +352,22 @@ button {
     color: white;
     cursor: pointer;
 }
+
+@media screen and (min-width: 300px) {
+    .carousel-item img {
+        margin-top: -13%;
+        width: auto;
+        height: 75%;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+    
+    #linkedin a img {
+        width: 80px;
+        height: 80px;
+    }
+
+    #projets {
+        margin-top: -13%;
+    }
+}
