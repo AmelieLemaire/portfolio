@@ -66,7 +66,7 @@ a {
 
 .carousel-container {
     position: relative;
-    margin: 50px auto;
+    margin: 15px auto;
     justify-content: center;
     align-items: center;
     height: 50vw;
@@ -97,6 +97,11 @@ a {
 
 .carousel-item.active {
     opacity: 1;
+}
+
+#projets button {
+    position: relative;
+    z-index: 1000;
 }
 
 #linkedin a {
@@ -309,6 +314,73 @@ button {
     color: black;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(14, 0, 27);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-logo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    background-color: #333;
+    padding: 20px 0;
+    border-radius: 20px;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.logo-carousel-container {
+    display: flex;
+    overflow: hidden;
+    height: 100px;
+    width: calc(100px * 5 + 20px); /* Image width * number of images + total margin */
+}
+
+.logo-carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.logo-carousel-img {
+    max-width: 100px;
+    height: auto;
+    margin: 0 10px;
+}
+
+
+
 .score,
 .time,
 .best_score {
@@ -374,5 +446,14 @@ button {
 
     #projets {
         margin-top: -13%;
+    }
+
+    #projets button {
+        margin-top: 50px;
+    }
+
+    button {
+        position: relative;
+        z-index: 500;
     }
 }
