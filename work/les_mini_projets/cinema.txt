@@ -1,3 +1,6 @@
+ce mini projet qui à duré 3h avait pour but d'afficher dans un terminal différents éléments récupérer dans une 
+base de données en sql @_@
+
 while (1) {
 
 

@@ -1,3 +1,5 @@
+Le but de ce mini projet est de recréer un emploi du temps et de l'organiser @_@
+
 function display_event(array $event)
 {
     echo 'The "' . $event['name'] . ' "event will take place on ' .

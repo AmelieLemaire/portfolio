@@ -1,0 +1,58 @@
+ce mini projet est basé sur un algorithme affin de créer un petit jeux et d'afficher les scores@_@
+
+function pelican_game(int $n)
+{
+    if ($n < 60 || $n > 360) {
+        echo "Valeur impossible\n";
+    } else {
+        $total = $n = $n + 43;
+
+        if ($n % 32 === 0) {
+            $n = $n / 8;
+        } elseif ($n % 6 === 0) {
+            $n = $n / 3;
+        } else {
+            $n = $n - 42;
+        }
+
+        $a = substr($n, -1);
+        if ($a !== 0) {
+            $b = strlen($n);
+            if ($b > 2) {
+
+                $c = (substr($n, 0, 1) * 100) + (substr($n, 1, 1) * 10);
+                $count = 0;
+
+                for ($a; $a > 0; $a--) {
+                    $count++;
+                    echo "Nigel " . $count . "\n";
+                }
+
+                $score_globale = $total - $c;
+                $score = substr($score_globale, 0, 1);
+                if ($score_globale < 100) {
+                    echo "Score : 0\n";
+                } else {
+                    echo "Score : " . $score . PHP_EOL;
+                }
+            } else {
+
+                $c = substr($n, 0, 1) * 10;
+                $count = 0;
+
+                for ($a; $a > 0; $a--) {
+                    $count++;
+                    echo "Nigel " . $count . "\n";
+                }
+
+                $score_globale = $total - $c;
+                $score = substr($score_globale, 0, 1);
+                if ($score_globale < 100) {
+                    echo "Score : 0\n";
+                } else {
+                    echo "Score : " . $score . PHP_EOL;
+                }
+            }
+        }
+    }
+}

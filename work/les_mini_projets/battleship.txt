@@ -1,3 +1,5 @@
+Le projet battleship a pour but de recreer un bataille navale dans le terminal et de gérer et afficher une grille stylisée @_@
+
 function isValidCoord(int $x, int $y, array $coord)
 {
     return $coord[0] >= 0 && $coord[0] < $x && $coord[1] >= 0 && $coord[1] < $y;

@@ -248,7 +248,8 @@ button.close_btn {
 }
 
 #filePreviewContainer {
-    display: none;
+    display: flex;
+    flex-direction: column;
     width: 80%;
     height: 90vh;
     position: fixed;
@@ -262,6 +263,10 @@ button.close_btn {
     align-items: center;
     padding: 20px;
     border-radius: 10px;
+}
+
+.file-info {
+    margin-top: 10px;
 }
 
 .file-preview {
@@ -361,7 +366,7 @@ button {
         object-fit: cover;
         border-radius: 30px;
     }
-    
+
     #linkedin a img {
         width: 80px;
         height: 80px;
