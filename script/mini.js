@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function fetchMiniProjets() {
         const miniProjets = [
-            '../work/les_mini_projets/cinema.php',
-            '../work/les_mini_projets/calendar.php',
-            '../work/les_mini_projets/battleship.php'
+            '../work/les_mini_projets/cinema',
+            '../work/les_mini_projets/calendar',
+            '../work/les_mini_projets/battleship'
         ];
 
         const miniProjetsDiv = miniProjetsContainer.querySelector('.mini-projets');
