@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             fetchVideos();
             videosContainer.style.display = 'flex';
-            videoGrid.style.display = 'grid'; 
+            videoGrid.style.display = 'grid';
         } catch (error) {
             console.error('Erreur lors de la tentative d\'affichage des vidéos :', error);
         }
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             videoDiv.addEventListener('click', () => {
                 try {
-                    previewVideo(video.file, video.descriptionFile);
+                    previewVideo(video.file);
                 } catch (error) {
                     console.error(`Erreur lors de la tentative de prévisualisation de la vidéo ${video.file} :`, error);
                 }
@@ -56,44 +56,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function previewVideo(file, descriptionFile) {
+    function previewVideo(file) {
         if (activeDescriptionDiv) {
             activeDescriptionDiv.remove();
             activeDescriptionDiv = null;
         }
 
-        fetch(descriptionFile)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Erreur réseau: ${response.statusText}`);
-                }
-                return response.text();
-            })
-            .then(text => {
-                const videoDiv = document.createElement('div');
-                videoDiv.classList.add('description');
-                videoDiv.innerHTML = `<video controls>
-                                        <source src="${file}" type="video/webm">
-                                        Votre navigateur ne supporte pas la vidéo.
-                                      </video>
-                                      <p>${text.trim()}</p>`;
-                videosContainer.appendChild(videoDiv);
-                videoDiv.style.display = 'block';
-                activeDescriptionDiv = videoDiv;
-            })
-            .catch(error => {
-                console.error(`Erreur lors du chargement du fichier : ${error.message}`);
-                const videoDiv = document.createElement('div');
-                videoDiv.classList.add('description');
-                videoDiv.innerHTML = `<video controls>
-                                        <source src="${file}" type="video/webm">
-                                        Votre navigateur ne supporte pas la vidéo.
-                                      </video>
-                                      <p>Erreur lors du chargement de la description: ${error.message}</p>`;
-                videosContainer.appendChild(videoDiv);
-                videoDiv.style.display = 'block';
+        const videoDiv = document.createElement('div');
+        videoDiv.classList.add('description');
+        videoDiv.innerHTML = `<video controls>
+                                <source src="${file}" type="video/webm">
+                                Votre navigateur ne supporte pas la vidéo.
+                              </video>`;
+        videosContainer.appendChild(videoDiv);
+        videoDiv.style.display = 'block';
+        activeDescriptionDiv = videoDiv;
 
-                activeDescriptionDiv = videoDiv;
-            });
+        const videoElement = videoDiv.querySelector('video');
+        videoElement.playbackRate = 2.0;
+
+        videoElement.addEventListener('loadedmetadata', () => {
+            videoElement.playbackRate = 2.0;
+        });
     }
 });
