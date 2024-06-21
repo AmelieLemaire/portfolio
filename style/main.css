@@ -22,13 +22,6 @@ nav ul {
     align-items: center;
 }
 
-nav ul img {
-    height: 9vw;
-    width: auto;
-    vertical-align: middle;
-    margin-right: 20px;
-}
-
 nav ul li {
     display: inline-block;
     margin: 0 10px;
@@ -50,6 +43,15 @@ nav ul li a:hover {
 h2 {
     color: white;
     margin: 10px 0 -10px 0;
+}
+
+main img {
+    height: 20vw;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 20px;
+    margin-top: 20px;
+    border-radius: 50%;
 }
 
 p {
@@ -100,7 +102,6 @@ a {
 }
 
 #projets button {
-    position: relative;
     z-index: 1000;
 }
 
@@ -214,7 +215,7 @@ form {
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 1000;
     display: flex;
-    justify-content: center;
+    justify-content: column;
     align-items: center;
     padding: 20px;
     border-radius: 10px;
@@ -312,6 +313,10 @@ button {
     cursor: pointer;
     margin-bottom: 20px;
     color: black;
+}
+
+#projets button {
+    margin: 0;
 }
 
 .score,
@@ -527,12 +532,14 @@ button {
         margin-top: -13%;
     }
 
-    #projets button {
-        margin-top: 50px;
-    }
-
     button {
         position: relative;
         z-index: 500;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #projets button {
+        margin-top: 40px;
     }
 }
