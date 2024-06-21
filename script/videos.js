@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const videos = [
         { thumbnail: 'assets/css_generator.png', title: 'css generator', file: 'assets/vidéos/css_generator.webm' },
+        { thumbnail: 'assets/bsq.png', title: 'bsq', file: 'assets/vidéos/bsq.webm' },
     ];
 
     if (!showVideosBtn || !videosContainer || !closeVideosBtn || !videoGrid) {
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             fetchVideos();
             videosContainer.style.display = 'flex';
-            videoGrid.style.display = 'grid';
+            videoGrid.style.display = 'flex';
         } catch (error) {
             console.error('Erreur lors de la tentative d\'affichage des vidéos :', error);
         }

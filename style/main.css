@@ -45,7 +45,7 @@ h2 {
     margin: 10px 0 -10px 0;
 }
 
-main img {
+#Photo-pro {
     height: 20vw;
     width: auto;
     vertical-align: middle;
@@ -341,7 +341,7 @@ button {
 }
 
 .video-grid {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
     padding: 20px;
@@ -357,7 +357,7 @@ button {
 }
 
 .video-grid .video img {
-    max-width: 100%;
+    max-width: 100px;
     height: auto;
     cursor: pointer;
 }
@@ -454,7 +454,7 @@ button {
 .description {
     display: none;
     width: 90%;
-    max-width: 1000px;
+    max-width: 600px;
     background-color: rgba(0, 0, 0, 0.9);
     color: white;
     padding: 10px;
