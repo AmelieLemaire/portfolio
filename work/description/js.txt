@@ -1,0 +1,1 @@
+Affin de rendre mes site et créations plus vivante je me suis vite tournée vers un language qui me permettrais de dévelloper des choses plus intéractives, j'ai donc débutée mon appretissage du javascript vanilla.

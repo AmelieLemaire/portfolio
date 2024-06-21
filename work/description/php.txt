@@ -1,0 +1,1 @@
+Une fois rentrée à Epitech l'école de l'excellence informatique en webacadémie, j'ai été plongée en compagnie de mes camarades de promotions dans une 'piscine' php de 3 semaines où nous avons appris toutes les bases du php ce qui nous a permis par la suite de dévelloper des projet tel que le css générator qui est un compilateur de png en ligne de commandes purement en php.

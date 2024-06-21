@@ -1,0 +1,1 @@
+Une fois que les bases du langage php furent acquises, l'étape suivante à été la gestion de base de données. J'ai appris le sql à travers différents examens de 3h ou nous devions manipuler des bases de données dans php my admin à l'aide de mySQL.

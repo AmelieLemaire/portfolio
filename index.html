@@ -11,6 +11,8 @@
     <script src="work/shotnwin/script.js"></script>
     <script src="script/mini.js"></script>
     <script src="script/logo-carousel.js"></script>
+    <script src="script/competences.js"></script>
+    <script src="script/videos.js"></script>
 </head>
 
 <body>
@@ -44,6 +46,13 @@
         <div id="formation"></div>
 
         <div id="projets">
+
+            <button id="showVideosBtn">Voir les vidéos</button>
+            <div id="videosContainer" style="display: none;">
+                <div class="video-grid"></div>
+                <button class="close_btn">Fermer</button>
+            </div>
+
             <button id="showGameBtn">shotnwin</button>
             <button id="showMiniProjetsBtn">Voir les mini projets</button>
             <div id="miniProjetsContainer" class="project-container" style="display: none;">
@@ -73,24 +82,17 @@
             </div>
         </div>
 
-        <div class="carousel-logo">
-            <button class="carousel-prev">&#10094;</button>
-            <div class="carousel-container logo-carousel-container">
-                <div class="carousel-slide logo-carousel-slide">
-                    <img src="assets/html.png" alt="HTML Logo" class="logo-carousel-img">
-                    <img src="assets/css.png" alt="CSS Logo" class="logo-carousel-img">
-                    <img src="assets/js.png" alt="JS Logo" class="logo-carousel-img">
-                    <img src="assets/html.png" alt="HTML Logo" class="logo-carousel-img">
-                    <img src="assets/html.png" alt="HTML Logo" class="logo-carousel-img">
-                </div>
-            </div>
-            <button class="carousel-next">&#10095;</button>
+        <button id="showCompetencesBtn">Les languages</button>
+
+        <div id="competences" style="display: none;">
+            <button class="close_btn">&times;</button>
+            <div class="competence-grid"></div>
         </div>
 
     </main>
     <footer>
         <div id="contact">
-            <button><a href="assets/Amélie_lemaire-3.pdf" download="Amélie_Lemaire_CV.pdf">Mon CV</a></button>
+            <button id="cv"><a href="assets/Amélie_lemaire-3.pdf" download="Amélie_Lemaire_CV.pdf">Mon CV</a></button>
             <div id="linkedin">
                 <a href="https://www.linkedin.com/in/amelie-lemaire-ba1170212" target="_blank">
                     <img src="assets/logo_linedin.png" alt="">

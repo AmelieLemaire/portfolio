@@ -314,76 +314,156 @@ button {
     color: black;
 }
 
-.carousel-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-    background-color: #333;
-    padding: 20px 0;
-    border-radius: 20px;
-}
-
-.carousel-prev,
-.carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    font-size: 24px;
-    transition: background-color 0.3s;
-    width: 40px;
-}
-
-.carousel-prev {
-    left: 10px;
-}
-
-.carousel-next {
-    right: 10px;
-}
-
-.carousel-prev:hover,
-.carousel-next:hover {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.logo-carousel-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.logo-carousel-slide {
-    display: flex;
-}
-
-.logo-carousel-img {
-    max-width: 100px;
-    height: auto;
-    margin: 0 auto; /* Centrez horizontalement l'image */
-    opacity: 0; /* Initialiser l'opacité à 0 pour toutes les images */
-    transition: opacity 0.3s ease; /* Transition pour l'opacité */
-}
-
-.logo-carousel-img.active {
-    opacity: 1; /* Opacité à 1 pour l'image active */
-}
-
 .score,
 .time,
 .best_score {
     color: white;
+}
+
+#videosContainer {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.video-grid .video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.video-grid .video img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.description {
+    max-width: 90%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+.description video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close_btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+
+#competences {
+    display: none;
+    width: 80%;
+    height: 90vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+#competences .close_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+#competences .competence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.competence {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #555555;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.competence:hover {
+    background-color: #888787;
+    transform: translateY(-5px);
+}
+
+.competence img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.competence p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.description {
+    display: none;
+    width: 90%;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    font-size: 14px;
+    margin-top: 10px;
+    border: solid rgb(33, 33, 33);
+}
+
+.description p {
+    margin: 0;
+    line-height: 1.5;
 }
 
 @keyframes moveTarget {

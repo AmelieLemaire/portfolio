@@ -1,0 +1,1 @@
+        { thumbnail: 'assets/css_generator.png', title: 'css generator', file: 'assets/vidéos/css_generator.webm' },
