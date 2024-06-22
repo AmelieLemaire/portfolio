@@ -87,6 +87,10 @@ a {
     text-decoration: none;
 }
 
+#cv {
+    position: relative;
+}
+
 /* Carousel Styles */
 #formation {
     position: relative;
