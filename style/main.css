@@ -102,7 +102,7 @@ a {
 }
 
 #projets button {
-    z-index: 1000;
+    z-index: 500;
 }
 
 #linkedin a {
@@ -202,6 +202,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 5000;
 }
 
 #miniProjetsContainer {
