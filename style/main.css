@@ -11,8 +11,10 @@ body {
 
 header {
     background-color: #333;
+    width: 100%;
     padding: 10px 0;
-    z-index: 100;
+    z-index: 10000;
+    position: fixed;
 }
 
 /* Navigation Styles */
@@ -69,8 +71,19 @@ h2 {
     width: auto;
     vertical-align: middle;
     margin-right: 20px;
-    margin-top: 20px;
+    margin-top: 50px;
     border-radius: 50%;
+}
+
+@media screen and (max-width: 450px) {
+    #Photo-pro {
+        height: 20vw;
+        width: auto;
+        vertical-align: middle;
+        margin-right: 20px;
+        margin-top: 100px;
+        border-radius: 50%;
+    }
 }
 
 /* Paragraph Styles */
