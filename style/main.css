@@ -508,6 +508,7 @@ form {
 }
 
 .competence {
+    width: 95%;
     cursor: pointer;
     padding: 10px;
     background-color: #555555;
